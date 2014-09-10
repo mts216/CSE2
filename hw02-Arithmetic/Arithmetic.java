@@ -33,21 +33,17 @@ public class Arithmetic{
         
         //Computing the calculations
         totalSockCost$=(nSocks*socksCost$);
-        totalSocksTax=(totalSockCost$*taxPercent)*((100)/(100.0));
-        totalGlassCost$=(nGlasses*glassCost$)*(100/100.0);
-        totalGlassTax=(totalGlassCost$*taxPercent)*(100/100.0);
-        totalEnvelopeCost$=(nEnvelopes*envelopeCost$)*(100/100.0);
-        totalEnvelopeTax=(totalEnvelopeCost$*taxPercent)*(100/100.0);
-        totalSalesTax=((totalSocksTax+totalGlassTax+totalEnvelopeTax))*(100/100.0);
-        totalCOPbeforetax=((totalSockCost$+totalGlassCost$+totalEnvelopeCost$))*(100/100.0);
-        totalCOPaftertax=((totalSockCost$+totalSocksTax)+(totalGlassCost$+totalGlassTax)+(totalEnvelopeCost$+totalEnvelopeTax))*(100/100.0);
-        //Converting my answer from a double to an integer
-       /* int s= (int)totalSockCost$ *(100/100.0);
-        int g= (int)totalGlassCost$;
-        int e= (int)totalEnvelopeCost$;
-        int i= (int)totalSalesTax;
-        int c= (int)totalCOPaftertax;*/
-        //Print out the answers
+        totalSocksTax=(totalSockCost$*taxPercent);
+        totalGlassCost$=(nGlasses*glassCost$);
+        totalGlassTax=(totalGlassCost$*taxPercent);
+        totalEnvelopeCost$=(nEnvelopes*envelopeCost$);
+        totalEnvelopeTax=(totalEnvelopeCost$*taxPercent);
+        totalSalesTax=(totalSocksTax+totalGlassTax+totalEnvelopeTax);
+        totalCOPbeforetax=((totalSockCost$+totalGlassCost$+totalEnvelopeCost$));
+        totalCOPaftertax=((totalSockCost$+totalSocksTax)+(totalGlassCost$+totalGlassTax)+(totalEnvelopeCost$+totalEnvelopeTax));
+        
+       
+        //Print out the answers with 2 decimal places
         System.out.printf("The total cost of socks is $%2.2f  %n", totalSockCost$);
         System.out.printf("The total cost of glass is $%2.2f %n", totalGlassCost$);
         System.out.printf("The total cost of envelopes is $%2.2f %n",totalEnvelopeCost$);
