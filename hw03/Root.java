@@ -16,20 +16,21 @@ public class Root{
         System.out.print("Enter a double, and I print its cube root:");
         double x=myScanner.nextDouble();
         
-        
+        //Variables Initialized
         double guess;
         double cubeRoot;
         double multiplied;
         
+        //Calculations
         guess=x/3.0;
-        
-        guess=(guess*guess*guess+x)/(3*guess*guess);
+        guess=(2*guess*guess*guess+x)/(3*guess*guess);
         guess=(2*guess*guess*guess+x)/(3*guess*guess);
         guess=(2*guess*guess*guess+x)/(3*guess*guess);
         guess=(2*guess*guess*guess+x)/(3*guess*guess);
         guess=(2*guess*guess*guess+x)/(3*guess*guess);
         multiplied=guess*guess*guess;
         
+        //Print out results
         System.out.println(guess);
         System.out.println("The cube root is "+guess+":"+guess+"*"+guess+"*"+guess);
         System.out.println("="+multiplied);
