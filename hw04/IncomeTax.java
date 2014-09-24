@@ -16,6 +16,7 @@ public class IncomeTax{
         double income=0;
         int Income=0;
         double tax=0;
+        //Double cast number to an int and check
         income= myScanner.nextDouble();
         if(income == (int)income&&income>=0){
             Income = (int)income;
@@ -24,7 +25,8 @@ public class IncomeTax{
             System.out.printf("You did not enter an int, goodbye %n");
             System.exit(1);
         }
-
+        
+        //Calculations
         if (Income<=20){
                 tax=Income*.5;
                 //System.out.printf("The tax rate on %8d is 5%, and the tax is %8.8f %n", Income, Tax20);

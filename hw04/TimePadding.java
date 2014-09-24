@@ -19,7 +19,8 @@ public class TimePadding{
         int hours=0;
         int minutes=0;
         int secs=0;
-
+        
+        //Calculations
         secs = seconds%60;
         minutes = seconds/60;
         hours = minutes/60;
@@ -27,11 +28,14 @@ public class TimePadding{
         if(hours>12){
             hours = hours - 12;
         }
+        //no zeros
         if(minutes>9&&secs>9)
             System.out.printf("%2d:%2d:%2d\t\n", hours, minutes, secs);
+        //one zero    
         else if(minutes<10&&secs>9){
             System.out.printf("%2d:0%1d:%2d\t\n", hours, minutes, secs);
         }
+        //two zeros
         else{
             System.out.printf("%2d:0%1d:0%1d\t\n", hours, minutes, secs);
         }

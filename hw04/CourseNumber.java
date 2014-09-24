@@ -16,7 +16,7 @@ public class CourseNumber{
         double Course= myScanner.nextDouble();
         int course=0;
         
-       
+       //Double cast int and check
        if (Course==(int)Course){
            course=(int)Course;
            
@@ -25,6 +25,7 @@ public class CourseNumber{
            System.exit(1);
        } 
        
+       //Calculations
        if (course>186509&&course<201441){
            if ((course%10)==0&&(course%100)<50){
                 int semester = (course%100)/10;
@@ -41,10 +42,12 @@ public class CourseNumber{
                     System.out.println("The course was offered in the Fall semester of " +course/100);
                 }
            }
+           //Not a real semester
            else{
                System.out.println(course+" is not a legitimate semester");
            }
        }
+       //Not in the course range
         else{
             System.out.println(course + " falls outside the given range");
         }
