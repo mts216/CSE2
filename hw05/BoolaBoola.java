@@ -33,101 +33,63 @@ public class BoolaBoola{
         String answer= myScanner.nextLine();
         
         //Declare and initialize variables
-        String answer1_2F="0";
-        String answer1_2T="0";
-        String answer2_2F="0";
-        String answer2_2T="0";
-        
-        //Combinations for the first 2 booleans and first operator if it's false
-        if (answer1==false && answer2==false && rRan1.equals("&&")){
-             answer1_2F = "false";
-            }
-            else if (answer1==true && answer2==false && rRan1.equals("&&")) {
-                 answer1_2F="false";
-            }
-            else if (answer1==false && answer2==true && rRan1.equals("&&")) {
-                answer1_2F="false";
-            }
-            else if (answer1==false && answer2==false && rRan1.equals("||")){
-                answer1_2F="false";
-            }
-    System.out.println(answer1_2F);
+        boolean answer1_2T= false;
+        boolean answer2_2F= false;
+        boolean answer2_2T= false;
     
-        //Cobinations for the first 2 booleans and first operator if it's true    
+        //Combinations for the first 2 booleans and first operator if it's true    
         if (answer1==true && answer2==true && rRan1.equals("||")){
-            answer1_2T="true";
+            answer1_2T=true;
             }
             else if (answer1==true && answer2==false && rRan1.equals("||")){
-                answer1_2T="true";
+                answer1_2T=true;
             }
             else if (answer1==false && answer2== true && rRan1.equals("||")){
-                answer1_2T="true";
+                answer1_2T=true;
             }
             else if (answer1==true && answer2==true && rRan1.equals("&&")){
-                answer1_2T="true";
+                answer1_2T=true;
             }
-    System.out.println(answer1_2T);
     
-        Oper
-    
-        //Combinations using the answer from above and evaulating it using the second operator and third boolean if it's false
-        if (answer1_2F.equals(false) && rRan2.equals("&&") && answer3==false){
-            answer2_2F="false";
-        }
-            else if (answer1_2F.equals(false) && rRan2.equals("&&") && answer3==true){
-                answer2_2F="false";
+        if (answer1_2T==true && answer3==true && rRan2.equals("||")){
+            answer2_2T=true;
             }
-            else if (answer1_2T.equals(true) && rRan2.equals("&&") && answer3==false){
-                answer2_2F="false";
+            else if (answer1_2T==true && answer3==false && rRan2.equals("||")){
+                answer2_2T=true;
             }
-            else if (answer1_2F.equals(false) && rRan2.equals("||") && answer3==false){
-                answer2_2F="false";
+            else if (answer1_2T==false && answer3== true && rRan2.equals("||")){
+                answer2_2T=true;
             }
-    System.out.println(answer2_2F);
-    
-        //Combinations using the answer from above and evaluating it using the second operator and third boolean if it's true
-        if (answer1_2T.equals(true) && rRan2.equals("||") && answer3==true){
-            answer2_2T="true";
-        }    
-            else if (answer1_2T.equals(true) && rRan2.equals("||") && answer3==false){
-                answer2_2T="true";
+            else if (answer1_2T==true && answer3==true && rRan2.equals("&&")){
+                answer2_2T=true;
             }
-            else if (answer1_2F.equals(false) && rRan2.equals("||") && answer3==true){
-                answer2_2T="true";
-            }
-            else if (answer1_2T.equals(true) && rRan2.equals("&&") && answer3==true){
-                answer2_2T="true";
-            }
-    System.out.println(answer2_2T);
-    
-        //Printing the result if the answer to the expression is false    
-        if (answer2_2F.equals(false)){  
-            System.out.print(answer2_2F);
+        
         switch (answer){
             case "F":
             case "f":
-                System.out.println("Correct, you go Glenn Coco");
-                break;
+                if(answer2_2T==false){
+                System.out.println("You go Glenn Coco");
+                }
+                else{
+                    System.out.println("LOL, good hustle. But still no.");
+                }
+            break;
+        default:
+            System.out.println("True. Or. False. It said it in the prompt.");
+        }
+        
+        switch (answer){
             case "T":
             case "t":
-                System.out.println("Try again.");
-                break;
+                if(answer2_2T==true){
+                System.out.println("Righty-O");
+                }
+                else{
+                    System.out.println("LOL, nope.");
+                }
+            break;  
+        default:
+            System.out.println("True. Or. False. It said it in the prompt.");
         }
-        }
-       
-        //Printing the result if the answer to the expression is true
-        else if (answer2_2T.equals(true)){
-            System.out.print(answer2_2T);
-        switch (answer){   
-            case "F":
-            case "f":
-                System.out.println("Try again!");
-                break;
-            case "T":
-            case "t":
-                System.out.println("Correct, you go Glenn Coco!");
-                break;
-        }        
-        }   
     }
 }
