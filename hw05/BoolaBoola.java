@@ -74,11 +74,6 @@ public class BoolaBoola{
                     System.out.println("LOL, good hustle. But still no.");
                 }
             break;
-        default:
-            System.out.println("True. Or. False. It said it in the prompt.");
-        }
-        
-        switch (answer){
             case "T":
             case "t":
                 if(answer2_2T==true){
@@ -88,8 +83,9 @@ public class BoolaBoola{
                     System.out.println("LOL, nope.");
                 }
             break;  
-        default:
+            default:
             System.out.println("True. Or. False. It said it in the prompt.");
+            break;
         }
     }
 }
