@@ -1,6 +1,6 @@
 // Mackenzie Snow
 // October 11, 2014
-// 
+// The purpose of this program is to compute the square root of a double using the bisection method.
 
 import java.util.*;
 public class Root{
@@ -13,7 +13,7 @@ public class Root{
         double low=0;
         double square;
         String line = myScanner.next();
-        if(!Character.isDigit(line.charAt(0))){
+        if(!Character.isDigit(line.charAt(0))){ //Checks for correct input
             System.out.println("You did not enter correct input.");
             System.exit(0);
         }
@@ -23,7 +23,7 @@ public class Root{
         high=input+1;
         double cond = 0.0000001*high;
         
-        while ((high-low)>cond){
+        while ((high-low)>cond){ //Bisection Method
             middle= (high+low)/2;
             square = middle*middle;
             if(square>input){
@@ -34,7 +34,7 @@ public class Root{
             }
             
         }
-        System.out.println("The square root of " + input + " is: " + middle);
+        System.out.println("The square root of " + input + " is: " + middle); //Print Statement
         
     }
 }
