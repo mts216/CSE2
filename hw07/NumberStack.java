@@ -21,7 +21,7 @@ public class NumberStack {
         }
         else{
             System.out.println("Expecting a number between 1 and 9");
-            System.exit(0);
+            myScanner.next();
         }
         //Prints out the number tree using for loops
         System.out.println("Using for loops:");
