@@ -23,8 +23,8 @@ public class HW8 {
     public static char getInput(Scanner myScanner, String strang) {
         char temp = helpLength(myScanner);
         while (!strang.contains(Character.toString(temp))) {
-            System.out.println("You did not enter a correct letter");
-            System.exit(0);
+            System.out.println("You did not enter a correct letter, try again: ");
+            strang=myScanner.next();
         }
         return temp;
     }
@@ -32,7 +32,7 @@ public class HW8 {
         String myStrang = myScanner.next();
         while (myStrang.length() != 1) {
             System.out.println("You did not enter an input with correct length. ");
-            System.exit(0);
+            myStrang=myScanner.next();
         }
         return myStrang.charAt(0);
     }
