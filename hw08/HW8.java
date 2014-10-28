@@ -16,7 +16,7 @@ public class HW8 {
         if (input != ' ') {
             System.out.println("You entered '" + input + "'");
         }
-       
+
         input = getInput(myScanner, "Choose a digit.", "0123456789");
         System.out.println("You entered '" + input + "'");
     }
@@ -47,32 +47,32 @@ public class HW8 {
             return userInput;
         }
         else {
-            int x = 0; 
-            
-        
-        while (!(userInput == abc.charAt(0) || userInput == abc.charAt(1) || userInput == abc.charAt(2) || userInput == abc.charAt(3))){
-            System.out.println("you did not enter proper term, try again: ");
+            int x = 0;
+
+
+            while (!(userInput == abc.charAt(0) || userInput == abc.charAt(1) || userInput == abc.charAt(2) || userInput == abc.charAt(3))) {
+                System.out.println("you did not enter proper term, try again: ");
                 userInput = myScanner.next().charAt(0);
                 x++;
-            
-        if (x == count){
-            
-            System.out.println("You failed after 5 tries");
-            return retEmpty;
-        }
-            
-        
+
+                if (x == count) {
+
+                    System.out.println("You failed after 5 tries");
+                    return retEmpty;
+                }
             }
-        return userInput;
-    }
+            return userInput;
+        }
     }
 
     public static char getInput(Scanner myScanner, String prompt, String num) {
+        
         System.out.println(prompt);
+        char temp=helpLength(myScanner);
         String userInput = myScanner.next();
-        if (!num.contains(userInput)) {
+        if (!num.contains(Character.toString(temp)) || !num.contains(Character.toString(temp))) {
             System.out.println("You did not enter an acceptable character.");
-            myScanner.next();
+            System.exit(0);
         }
         return userInput.charAt(0);
     }
