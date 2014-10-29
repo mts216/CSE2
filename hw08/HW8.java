@@ -68,12 +68,11 @@ public class HW8 {
     public static char getInput(Scanner myScanner, String prompt, String num) {
         
         System.out.println(prompt);
-        char temp=helpLength(myScanner);
-        String userInput = myScanner.next();
+        char temp= helpLength(myScanner);
         if (!num.contains(Character.toString(temp)) || !num.contains(Character.toString(temp))) {
             System.out.println("You did not enter an acceptable character.");
             System.exit(0);
         }
-        return userInput.charAt(0);
+        return temp;
     }
 }
