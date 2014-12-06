@@ -2,7 +2,7 @@
 //Mackenzie Snow
 //September 13, 2014
 //This program prompts the user for input then displays the 
-//four numbers to the right of the decimal point.
+//four numbers to the right of the decimal point.5
 
 //sets up the scanner
 import java.util.Scanner;

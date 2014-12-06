@@ -1,7 +1,9 @@
 //
 //Mackenzie Snow
 //lab 3
-//
+// In this lab we are learning how to take input from a user, manipulate it, and then output
+// what they want. This is pretty cool because most codes utilize user input. Yup.
+
 import java.util.Scanner;
 public class BigMac {
     			  // main method required for every Java program

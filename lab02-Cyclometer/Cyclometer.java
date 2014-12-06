@@ -1,7 +1,9 @@
 //
-//
 // Mackenzie Snow
-//
+// Cyclometer Java Program
+// In this program we are starting to use java to do arithmetic. We are also starting to define variables
+// and to play with those variables. We are also concatinating(sp) strings and variables. Coolio.
+
 public class Cyclometer{
     
     public static void main(String [] args){

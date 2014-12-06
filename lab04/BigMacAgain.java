@@ -3,6 +3,9 @@
 // September 17, 2014
 // Lab 04 
 // Uses user input to calculate the cost of burgers and fries
+// Whoah hey this is another code that has to do with hamburgers, now i'm getting hungry.
+// This is pretty advanced because we are using user input and if/else statements to provide more options with less coding.
+
 
 import java.util.Scanner;
 
