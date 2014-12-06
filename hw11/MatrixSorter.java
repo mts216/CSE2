@@ -18,6 +18,7 @@ public class MatrixSorter {
         show(mat3d);
     }
 
+// find the min of the array
     public static int findMin(int[][][] mat3d) {
         int min = mat3d[0][0][0];
 
@@ -36,13 +37,14 @@ public class MatrixSorter {
 
     }
 
+// sort the array
     public static void sort(int[][] mat3d) {
         for (int i = 0; i < mat3d.length; i++) {
             sortRow(mat3d[i]); // need to make sure rows are sorted in order
         }
         sortColumns(mat3d);
     }
-
+//sort the rows
     public static int[] sortRow(int[] oneDimension) {
 
         int min = oneDimension[0];
@@ -52,7 +54,7 @@ public class MatrixSorter {
         }
         return oneDimension;
     }
-
+// find the min in the range
     public static int findMinAndRange(int[] oneDimension, int min, int max) {
         int man = oneDimension[min];
         int out = min;
@@ -64,21 +66,21 @@ public class MatrixSorter {
         }
         return out;
     }
-
+// swap sort the rows in the  array
     public static void swap(int[] oneDimension, int num1, int num2) {
         int temp = oneDimension[num1];
         oneDimension[num1] = oneDimension[num2];
         oneDimension[num2] = temp;
 
     }
-
+// swap sort the columns
     public static void swapColumns(int[][] twoDimension, int array1, int array2) {
         int[] temp = twoDimension[array1];
         twoDimension[array1] = twoDimension[array2];
         twoDimension[array2] = temp;
 
     }
-
+// sort the columns
     public static void sortColumns(int[][] twoDimension) {
         int min = twoDimension[0][0];
         for (int h = 0; h < twoDimension.length; h++) {
@@ -86,7 +88,7 @@ public class MatrixSorter {
             swapColumns(twoDimension, h, min);
         }
     }
-
+// min and range of columns
     public static int findMinAndRange(int[][] twoDimension, int min, int max) {
         int man = twoDimension[min][0];
         int out = min;
@@ -100,7 +102,7 @@ public class MatrixSorter {
 
     }
 
-
+// print out the array
     public static void show(int[][][] mat3d) {
         for (int i = 0; i < mat3d.length; i++) {
             for (int j = 0; j < mat3d[i].length; j++) {
@@ -113,7 +115,7 @@ public class MatrixSorter {
 
         }
     }
-
+// build the array
     public static int[][][] buildMat3d() {
         int[][][] mat3d = new int[3][][];
         for (int i = 0; i < mat3d.length; i++) {

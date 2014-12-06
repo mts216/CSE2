@@ -7,6 +7,7 @@
 
 import java.util.*;
 public class PokerHands {
+    //global variables yo
     public final static String[] ranks = {
         "a", "k", "q", "j", "10", "9", "8", "7", "6", "5", "4", "3", "2"
     };
@@ -15,7 +16,7 @@ public class PokerHands {
     };
     public static void main(String[] args) {
 
-        String[][] cards = new String[2][5]; //dont forget to change this
+        String[][] cards = new String[2][5]; 
         String[][] cardRepeat = new String[2][5];
 
         Scanner myScanner = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class PokerHands {
         basic: for (int i = 0; i < cards[0].length; i++) {
             String currentSuit = buildSuit(myScanner);
             String currentRank = buildHand(myScanner);
-            //repeat(currentSuit, currentRank, cardRepeat, i, myScanner);
+            
 
             for( int r=0; r<i; r++){
                 if (cards[0][r].equals(currentSuit) && cards[1][r].equals(currentRank)) {
@@ -49,6 +50,7 @@ public class PokerHands {
         categorizedHand(checkedRanks, check, cards[0]);
 
     }
+//get one pair
     public static boolean got1Pair(int[] check) {
 
         if (check[2] == 1) {
@@ -56,28 +58,28 @@ public class PokerHands {
         }
         return false;
     }
-
+// get two pair
     public static boolean twoPair(int[] check) {
         if (check[2] == 2) {
             return true;
         }
         return false;
     }
-
+// get full house
     public static boolean fullHouse(int[] check) {
         if (check[2] == 1 && check[3] == 1) {
             return true;
         }
         return false;
     }
-
+// get four of a kind
     public static boolean fourOfAKInd(int[] check) {
         if (check[4] == 1) {
             return true;
         }
         return false;
     }
-
+// get a flush
     public static boolean flush(String[] cards) {
         for (int i = 0; i < cards.length; i++) {
             if (!cards[0].equals( cards[i])) {
@@ -86,7 +88,7 @@ public class PokerHands {
         }
         return true;
     }
-
+// get a straight
     public static boolean straight(int[] checkedRanks, int[] check) {
         if (check[1] != 5) {
             return false;
@@ -105,7 +107,7 @@ public class PokerHands {
         System.out.println("error");
         return false;
     }
-    
+// put all those together  
     public static void categorizedHand(int[] checkedRanks, int[] check, String[] cards){
         if(flush(cards) && straight(checkedRanks, check) && checkedRanks[0]==1){
             System.out.println("This is a royal flush.");
@@ -135,7 +137,7 @@ public class PokerHands {
             System.out.println("High card.");
         }
     }
-
+// check the ranks
     public static int[] lookUpRanks(int[] rankHand) {
         int[] checkedRanks = new int[13];
         for (int i = 0; i < rankHand.length; i++) {
@@ -154,25 +156,7 @@ public class PokerHands {
             }
             return check;
         }
-        /*  public static void repeat(String suit, String rank, String[][] cardRepeat, int counter, Scanner myScanner) {
-                  int gotSuit = Arrays.binarySearch(cardRepeat[0], suit);
-                  int gotRank = Arrays.binarySearch(cardRepeat[1], rank);
-                  System.out.print("ok");
-                  if (gotSuit == gotRank && gotRank != -1 && gotSuit != -1) {
-                      System.out.print("Yo, you repeated that card, try again.");
-                      suit = buildSuit(myScanner);
-                      rank = buildHand(myScanner);
-                      repeat(suit, rank, cardRepeat, counter, myScanner);
-                      return;
-                  }
-                  System.out.print("test");
-                  cardRepeat[0][counter] = suit;
-                  cardRepeat[1][counter] = rank;
-                  return;
-
-              }
-              */
-        // Builds the hand
+        // Builds the suit
     public static String buildSuit(Scanner myScanner) {
 
         System.out.print("Enter the suit: 'c', 'd', 'h', or 's'-: ");
@@ -184,7 +168,7 @@ public class PokerHands {
         return suit;
     }
 
-    // Builds the hand
+    // Builds the rank
     public static String buildHand(Scanner myScanner) {
 
         System.out.print("Enter one of 'a', 'k', 'q', '10',... '2'- ");
@@ -195,7 +179,7 @@ public class PokerHands {
         }
         return cardNumber;
     }
-
+// search the suit
     public static int searchSuit(String current) {
         for (int i = 0; i < suits.length; i++) {
             if (current.equals(suits[i])) {
@@ -204,6 +188,7 @@ public class PokerHands {
         }
         return -1;
     }
+// search the ranks
     public static int searchRanks(String current) {
         //System.out.println("Current: " + current);
         for (int i = 0; i < ranks.length; i++) {
